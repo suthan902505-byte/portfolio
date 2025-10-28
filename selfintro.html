@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Self-Intro — Suthan Nathan</title>
+  <style>
+    :root{--accent:#0b74de;--muted:#6b7280;--bg:#f7fafc}
+    body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.5;background:var(--bg);color:#0f172a;padding:24px}
+    .card{max-width:900px;margin:24px auto;background:white;border-radius:12px;padding:28px;box-shadow:0 8px 30px rgba(12,15,20,0.08)}
+    header{display:flex;gap:18px;align-items:center}
+    .avatar{width:88px;height:88px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#6ee7b7);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:28px}
+    h1{margin:0;font-size:22px}
+    .role{color:var(--muted);margin-top:4px}
+    .contact{margin-left:auto;text-align:right}
+    .contact div{font-size:14px;color:var(--muted)}
+    .section{margin-top:20px}
+    .section h2{font-size:16px;margin:0 0 8px 0}
+    p.lead{margin:0;color:#0b1220}
+    ul{margin:8px 0 0 18px}
+    .controls{display:flex;gap:10px;margin-top:18px}
+    button{background:var(--accent);border:none;color:white;padding:8px 12px;border-radius:8px;cursor:pointer}
+    button.ghost{background:transparent;color:var(--accent);border:1px solid rgba(11,116,222,0.12)}
+    pre{background:#0b1220;color:#e6f0ff;padding:12px;border-radius:8px;overflow:auto}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .tag{background:#eef2ff;color:#1e3a8a;padding:6px 8px;border-radius:999px;font-size:13px}
+    footer{margin-top:18px;text-align:right;color:var(--muted);font-size:13px}
+    @media(print){body{padding:0;background:white} .card{box-shadow:none;border-radius:0}}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <header>
+      <div class="avatar">SN</div>
+      <div>
+        <h1>Suthan Nathan — Computer Science Student (Self-intro for Job Applications)</h1>
+        <div class="role">Aspiring Software Engineer · Problem-solver · Quick learner</div>
+      </div>
+      <div class="contact">
+        <div id="email">suthan902505@gmail.com</div>
+        <div id="phone">+91-8072866958</div>
+        <div id="location">India</div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Short elevator pitch (1–2 lines)</h2>
+      <p class="lead" id="short">I'm surendar, a computer science student building practical full‑stack projects. I write clean code, ship features fast, and learn new tech deliberately — currently focused on front-end engineering and real‑time web apps.</p>
+    </section>
+
+    <section class="section">
+      <h2>Medium intro (for email/intros — ~60–90 words)</h2>
+      <p id="medium">Hello — I'm surendar, a computer science student with hands‑on experience building front‑end projects and small full‑stack apps. I care about performance, readable code, and user-focused interfaces. I enjoy breaking big problems into testable pieces and shipping incremental value. I'm actively learning modern JS frameworks, APIs, and deployment workflows, and I'm looking for an internship or junior role where I can contribute and grow fast.</p>
+    </section>
+
+    <section class="section">
+      <h2>Long intro (for interviews / cover letters — ~150–220 words)</h2>
+      <p id="long">I’m surendar, a computer science student who prefers building over theorizing. Over the past 2 years I’ve prototyped multiple projects — dynamic image sliders, a live weather dashboard, and modular UI components — that taught me how to design APIs, manage asynchronous data flows, and optimise rendering performance. I write code with maintainability in mind: component-first design, clear naming, and automated checks where possible. I thrive in collaborative environments, enjoy code reviews, and I’m not afraid to push back when an approach risks technical debt. Outside code, I study system design basics and the psychology of product interactions (how micro-interactions shape user behaviour). I’m looking for a role where I can own features end-to-end, learn from experienced engineers, and contribute measurable impact quickly.</p>
+    </section>
+
+    <section class="section">
+      <h2>Key skills & keywords</h2>
+      <div class="tags" id="skills">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">React</span>
+        <span class="tag">APIs</span>
+        <span class="tag">Git</span>
+        <span class="tag">Responsive Design</span>
+        <span class="tag">Problem Solving</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How to use this file</h2>
+      <ul>
+        <li>Edit the contact details at the top (email, phone, location).</li>
+        <li>Pick either the short, medium, or long text depending on context.</li>
+        <li>Use the <strong>Copy</strong> button to paste this intro into emails, LinkedIn, or application forms.</li>
+        <li>Click <strong>Download</strong> to save a .txt file ready for attachments or ATS-friendly submissions.</li>
+      </ul>
+    </section>
+
+    <div class="controls">
+      <button id="copyShort">Copy Short</button>
+      <button id="copyMedium" class="ghost">Copy Medium</button>
+      <button id="copyLong">Copy Long</button>
+      <button id="download">Download .txt</button>
+      <button id="print" class="ghost">Print</button>
+    </div>
+
+    <section class="section">
+      <h2>Examples — tweak tone</h2>
+      <p><strong>Casual:</strong> I'm Surendar, a CS student who loves building clean UIs and solving frontend performance puzzles. I pick up new tools fast and ship features that users actually enjoy.</p>
+      <p><strong>Formal:</strong> I am Surendar, a computer science undergraduate with experience in front-end development and API integration. I seek to contribute to a team-focused engineering environment where I can apply and expand my technical skills.</p>
+    </section>
+
+    
+  </div>
+
+  <script>
+    function copyText(id){
+      const t = document.getElementById(id).innerText.trim();
+      navigator.clipboard.writeText(t).then(()=>alert('Copied to clipboard'));
+    }
+    document.getElementById('copyShort').addEventListener('click', ()=>copyText('short'));
+    document.getElementById('copyMedium').addEventListener('click', ()=>copyText('medium'));
+    document.getElementById('copyLong').addEventListener('click', ()=>copyText('long'));
+    document.getElementById('print').addEventListener('click', ()=>window.print());
+
+    document.getElementById('download').addEventListener('click', ()=>{
+      const parts = [
+        'Name: Officer K',
+        'Role: Computer Science Student',
+        'Email: '+document.getElementById('email').inner
